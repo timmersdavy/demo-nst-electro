@@ -1,0 +1,129 @@
+@font-face{font-family:"Exo 2";font-style:italic;font-weight:800;font-display:swap;src:url(fonts/exo-2-latin-800-italic.woff2) format("woff2")}
+@font-face{font-family:"Exo 2";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/exo-2-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/barlow-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/barlow-latin-600-normal.woff2) format("woff2")}
+
+:root{--y:#F9ED4E;--k:#161616;--paper:#F6F5EF;--grey:#55554f;--line:#d9d7cc;--rail:300px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--k);color:#fff;font:400 1.0625rem/1.6 "Barlow",system-ui,sans-serif;-webkit-text-size-adjust:100%}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:"Exo 2","Barlow",sans-serif;line-height:1.1;margin:0 0 .5em}
+h1{font-style:italic;font-weight:800;font-size:clamp(2.4rem,6vw,4.4rem);letter-spacing:-.01em}
+h2{font-style:italic;font-weight:800;font-size:clamp(1.7rem,3.4vw,2.4rem)}
+h3{font-weight:700;font-size:1.25rem}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--y);outline-offset:3px}
+.paper :focus-visible,.rail :focus-visible{outline-color:var(--k)}
+.skip{position:absolute;left:-999px;top:0;background:var(--y);color:var(--k);padding:.75rem 1rem;z-index:20;font-weight:600}
+.skip:focus{left:0}
+
+.shell{display:grid;grid-template-columns:var(--rail) 1fr;min-height:100vh}
+.rail{position:sticky;top:0;height:100vh;background:#fff;color:var(--k);display:flex;flex-direction:column;padding:1.5rem 1.5rem 1.75rem;border-right:8px solid var(--y)}
+.brand{display:block;margin-bottom:2.25rem}
+.rail nav ul{list-style:none;margin:0;padding:0}
+.rail nav a{display:block;text-decoration:none;font:700 1.15rem "Exo 2",sans-serif;padding:.7rem 0 .7rem .9rem;border-left:5px solid transparent}
+.rail nav a:hover{border-left-color:var(--line)}
+.rail nav a[aria-current="page"]{border-left-color:var(--y);background:linear-gradient(90deg,#fbf6a4,#fff)}
+.railcall{margin-top:auto;display:block;background:var(--k);color:var(--y);text-decoration:none;padding:.9rem 1rem;font:700 1.2rem "Exo 2",sans-serif}
+.railcall .small,.bigcall .small{display:block;font:600 .8rem "Barlow",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+
+main{min-width:0}
+.hero{position:relative;overflow:hidden;padding:clamp(3rem,9vw,7rem) clamp(1.25rem,5vw,4rem) 3.5rem}
+.hero .bolt{position:absolute;right:clamp(-30px,2vw,40px);top:50%;transform:translateY(-50%);height:min(80%,430px);width:auto;color:var(--y);opacity:.95}
+.hero h1,.hero .lead,.hero .actions,.kicker{position:relative}
+.hero h1{max-width:10.5em}
+.kicker{max-width:40ch}
+.hero .lead{max-width:44ch}
+.hero em{font-style:italic;color:var(--y)}
+.kicker{font:600 .85rem "Barlow",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--y);margin-bottom:1rem}
+.lead{font-size:1.25rem;color:#e8e8e2;max-width:48ch}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.btn{display:inline-block;padding:.9rem 1.5rem;font:700 1.05rem "Exo 2",sans-serif;text-decoration:none;border:3px solid var(--y);min-height:48px}
+.btn-y{background:var(--y);color:var(--k)}
+.btn-y:hover{background:#fff;border-color:#fff}
+.btn-o{background:transparent;color:#fff}
+.btn-o:hover{background:var(--y);color:var(--k)}
+.btn-k{background:var(--k);color:var(--y);border-color:var(--k)}
+.btn-k:hover{background:var(--y);color:var(--k)}
+.wire{height:6px;margin-top:3.5rem;background:linear-gradient(90deg,var(--y) 0,var(--y) 35%,rgba(249,237,78,0) 100%)}
+
+.sec{padding:clamp(2.5rem,6vw,4.5rem) clamp(1.25rem,5vw,4rem)}
+.paper{background:var(--paper);color:var(--k)}
+.sub{color:var(--grey);max-width:50ch}
+.groepen{list-style:none;margin:2rem 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.groep{background:#fff;border:2px solid var(--k);padding:1.5rem 1.5rem 1.5rem 5.25rem;position:relative;min-height:170px}
+.groep:nth-child(even){margin-top:1.75rem}
+.groep .nr{position:absolute;left:0;top:0;bottom:0;width:3.75rem;background:var(--y);color:var(--k);display:flex;align-items:center;justify-content:center;font:800 1.6rem "Exo 2",sans-serif;font-style:italic;border-right:2px solid var(--k)}
+.groep p{margin:0;color:var(--grey)}
+.more{margin:2.5rem 0 0}
+.textlink{font:700 1.1rem "Exo 2",sans-serif;text-decoration-thickness:3px;text-underline-offset:5px;text-decoration-color:var(--y)}
+.textlink:hover{background:var(--y)}
+
+.steps{list-style:none;margin:2rem 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;position:relative;counter-reset:s}
+.steps::before{content:"";position:absolute;left:1.4rem;right:0;top:1.4rem;height:4px;background:linear-gradient(90deg,var(--y),rgba(249,237,78,0))}
+.steps li{position:relative}
+.dot{position:relative;display:flex;align-items:center;justify-content:center;width:2.8rem;height:2.8rem;background:var(--y);color:var(--k);font:800 1.2rem "Exo 2",sans-serif;margin-bottom:1rem;transform:skewX(-12deg)}
+.steps p{color:#d6d6cf;margin:0}
+
+.band{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem;background:var(--y);color:var(--k)}
+.band h2{margin-bottom:.3em}
+.band p{margin:0;max-width:46ch}
+.band .btn-y{background:var(--k);color:var(--y);border-color:var(--k)}
+.band .btn-y:hover{background:#fff;color:var(--k)}
+
+.pagehead{padding:clamp(2.5rem,6vw,4.5rem) clamp(1.25rem,5vw,4rem) 2.5rem;border-bottom:6px solid var(--y)}
+.crumbs{font-size:.95rem;color:#cfcfc8;margin-bottom:1.25rem}
+.crumbs a{color:var(--y)}
+.dienst{display:grid;grid-template-columns:5.5rem 1fr;gap:1.5rem;padding:2rem 0;border-top:2px solid var(--k)}
+.dienst:first-child{border-top:0;padding-top:0}
+.dnr{align-self:start;width:fit-content;font:800 3.6rem/1 "Exo 2",sans-serif;font-style:italic;color:var(--k);-webkit-text-stroke:0;background:linear-gradient(transparent 62%,var(--y) 62%)}
+.dienst h2{margin-bottom:.3em}
+.dienst ul{margin:0;padding-left:1.2rem}
+.dienst li{margin:.2rem 0}
+.dienst p{color:var(--grey);max-width:56ch}
+
+.bigcall{display:inline-block;background:var(--k);color:var(--y);text-decoration:none;padding:1.1rem 1.75rem;font:800 clamp(1.8rem,4vw,2.6rem) "Exo 2",sans-serif;font-style:italic;margin-bottom:2rem}
+.bigcall:hover{background:var(--y);color:var(--k)}
+.bigcall:hover .small{color:var(--k)}
+.gegevens{margin:0 0 2rem;display:grid;gap:1.25rem}
+.gegevens dt{font:600 .8rem "Barlow",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--grey)}
+.gegevens dd{margin:.1rem 0 0;font-size:1.2rem}
+.prose{max-width:none}
+.prose p,.prose h2{max-width:62ch}
+.prose h2{font-size:1.4rem;margin-top:1.75rem}
+
+.foot{background:#0c0c0c;padding:2.25rem clamp(1.25rem,5vw,4rem);border-top:6px solid var(--y);font-size:1rem;color:#d6d6cf}
+.foot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.foot a{color:#fff}
+.foot a:hover{color:var(--y)}
+.demo{color:#bdbdb5}
+
+.shell > .foot{grid-column:2}
+
+@media (max-width:960px){
+.shell{display:block}
+.rail{position:static;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;gap:.75rem 1.25rem;padding:.9rem 1.25rem;border-right:0;border-bottom:6px solid var(--y)}
+.brand{margin:0;width:170px}
+.rail nav{order:3;width:100%}
+.rail nav ul{display:flex;flex-wrap:wrap;gap:.25rem 1rem}
+.rail nav a{padding:.5rem 0;border-left:0;border-bottom:4px solid transparent}
+.rail nav a:hover{border-bottom-color:var(--line)}
+.rail nav a[aria-current="page"]{border-bottom-color:var(--y);background:none}
+.railcall{margin:0 0 0 auto;padding:.55rem .9rem;font-size:1.05rem}
+.railcall .small{display:none}
+.hero .bolt{height:230px;right:-30px;top:auto;bottom:1rem;transform:none;opacity:.25}
+.groepen{grid-template-columns:1fr}
+.groep:nth-child(even){margin-top:0}
+.steps{grid-template-columns:1fr;gap:1.75rem}
+.steps::before{display:none}
+.foot-grid{grid-template-columns:1fr}
+.shell > .foot{grid-column:auto}
+}
+@media (max-width:480px){
+.dienst{grid-template-columns:1fr;gap:.25rem}
+.dnr{font-size:2.6rem;width:fit-content}
+.actions .btn{width:100%;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
